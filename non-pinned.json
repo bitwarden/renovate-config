@@ -1,0 +1,24 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    ":combinePatchMinorReleases",
+    ":dependencyDashboard",
+    ":separateMajorReleases",
+    "config:base",
+    "group:monorepos",
+
+    "github>bitwarden/renovate-config:pin-actions"
+  ],
+  "commitMessagePrefix": "[deps]:",
+  "commitMessageTopic": "{{depName}}",
+  "prConcurrentLimit": 0,
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": [
+      "every 2nd week starting on the 2 week of the year before 4am on Monday"
+    ]
+  },
+  "schedule": [
+    "every 2nd week starting on the 2 week of the year before 4am on Monday"
+  ]
+}
