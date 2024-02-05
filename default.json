@@ -7,7 +7,7 @@
     ":separateMajorReleases",
     "config:base",
     "group:monorepos",
-    "schedule:weekends",
+
     "github>bitwarden/renovate-config:pin-actions"
   ],
   "commitMessagePrefix": "[deps]:",
