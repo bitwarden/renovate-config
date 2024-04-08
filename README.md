@@ -1,3 +1,4 @@
-# Renovate - Shareable Config Presets
+# Renovate Configuration
 
-This repository contains `json` files representing Shareable Config Presets for Renovate.
+`json` files representing [shareable config presets](https://docs.renovatebot.com/config-presets/)
+and other helpers for Renovate.
