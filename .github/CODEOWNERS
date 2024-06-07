@@ -7,6 +7,3 @@
 # Default file owners
 * @bitwarden/dept-architecture
 
-# DevOps for Actions and other workflow changes
-.github/workflows @bitwarden/dept-devops
-pin-actions.json @bitwarden/dept-devops
