@@ -7,3 +7,5 @@
 # Default file owners
 * @bitwarden/dept-architecture
 
+# BRE for pinned GitHub Actions
+pin-actions.json @bitwarden/dept-bre
