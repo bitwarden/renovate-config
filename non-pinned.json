@@ -6,7 +6,6 @@
     ":separateMajorReleases",
     "config:base",
     "group:monorepos",
-
     "github>bitwarden/renovate-config:pin-actions"
   ],
   "commitMessagePrefix": "[deps]:",
