@@ -20,5 +20,9 @@
   },
   "schedule": [
     "every 2nd week starting on the 2 week of the year before 4am on Monday"
-  ]
+  ],
+  "vulnerabilityAlerts": {
+    "labels": ["security"],
+    "reviewers": ["team:team-appsec"]
+  }
 }
