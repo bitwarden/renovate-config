@@ -1,16 +1,6 @@
 {
   "packageRules": [
     {
-      "matchDatasources": ["github-tags"],
-      "matchPackageNames": ["Azure/login"],
-      "allowedVersions": "<=1.6.0"
-    },
-    {
-      "matchDatasources": ["github-tags"],
-      "matchPackageNames": ["helm/chart-releaser-action"],
-      "allowedVersions": "<=1.5.0"
-    },
-    {
       "matchManagers": ["nvm"],
       "rangeStrategy": "replace"
     }

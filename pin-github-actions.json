@@ -1,0 +1,189 @@
+{
+  "packageRules": [
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["actions/cache"],
+      "allowedVersions": "<=4.0.1"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["actions/checkout"],
+      "allowedVersions": "<=4.1.7"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["actions/download-artifact"],
+      "allowedVersions": "<=4.1.4"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["actions/github-script"],
+      "allowedVersions": "<=7.0.1"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["actions/labeler"],
+      "allowedVersions": "<=5.0.0"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["actions/setup-dotnet"],
+      "allowedVersions": "<=4.0.0"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["actions/setup-node"],
+      "allowedVersions": "<=4.0.2"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["actions/stale"],
+      "allowedVersions": "<=9.0.0"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["actions/upload-artifact"],
+      "allowedVersions": "<=4.3.1"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["act10ns/slack"],
+      "allowedVersions": "<=2.0.0"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["anchore/scan-action"],
+      "allowedVersions": "<=3.6.4"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["andymckay/labeler"],
+      "allowedVersions": "<=1.0.4"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["Azure/login"],
+      "allowedVersions": "<=1.6.0"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["azure/webapps-deploy"],
+      "allowedVersions": "<=2.2.11"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["checkmarx/ast-github-action"],
+      "allowedVersions": "<=2.0.23"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["chrnorm/deployment-action"],
+      "allowedVersions": "<=2.0.7"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["chrnorm/deployment-status"],
+      "allowedVersions": "<=2.0.3"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["chromaui/action"],
+      "allowedVersions": "<=10.9.5"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["codecov/codecov-action"],
+      "allowedVersions": "<=4.1.0"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["convictional/trigger-workflow-and-wait"],
+      "allowedVersions": "<=1.6.5"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["crazy-max/ghaction-import-gpg"],
+      "allowedVersions": "<=6.1.0"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["crowdin/github-action"],
+      "allowedVersions": "<=1.19.0"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["docker/build-push-action"],
+      "allowedVersions": "<=5.1.0"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["dorny/test-reporter"],
+      "allowedVersions": "<=1.8.0"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["github/codeql-action/upload-sarif"],
+      "allowedVersions": "<=3.24.9"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["helm/chart-releaser-action"],
+      "allowedVersions": "<=1.5.0"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["launchdarkly/find-code-references-in-pull-request"],
+      "allowedVersions": "<=1.1.0"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["macauley/action-homebrew-bump-cask"],
+      "allowedVersions": "<=1.0.0"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["maxim-lobanov/setup-xcode"],
+      "allowedVersions": "<=1.6.0"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["microsoft/setup-msbuild"],
+      "allowedVersions": "<=2.0.0"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["ncipollo/release-action"],
+      "allowedVersions": "<=1.14.0"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["nuget/setup-nuget"],
+      "allowedVersions": "<=2.0.0"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["peter-evans/close-issue"],
+      "allowedVersions": "<=3.0.1"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["samuelmeuli/action-snapcraft"],
+      "allowedVersions": "<=2.1.1"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["snapcore/action-build"],
+      "allowedVersions": "<=1.2.0"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["sonarsource/sonarcloud-github-action"],
+      "allowedVersions": "<=2.1.1"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["yogevbd/enforce-label-action"],
+      "allowedVersions": "<=2.2.2"
+    },
+  ]
+}
