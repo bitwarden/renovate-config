@@ -17,6 +17,14 @@
       "every 2nd week starting on the 2 week of the year before 4am on Monday"
     ]
   },
+  "packageRules": [
+    {
+      "matchManagers": ["dockerfile", "docker-compose", "github-actions"],
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true
+    }
+  ],
   "schedule": [
     "every 2nd week starting on the 2 week of the year before 4am on Monday"
   ],
