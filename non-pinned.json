@@ -23,6 +23,6 @@
   ],
   "vulnerabilityAlerts": {
     "labels": ["security"],
-    "reviewers": ["team:team-appsec"]
+    "additionalReviewers": ["team:team-appsec"]
   }
 }
