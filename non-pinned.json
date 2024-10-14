@@ -6,12 +6,13 @@
     ":separateMajorReleases",
     "config:base",
     "group:monorepos",
-
     "github>bitwarden/renovate-config:pin-actions"
   ],
   "commitMessagePrefix": "[deps]:",
   "commitMessageTopic": "{{depName}}",
   "prConcurrentLimit": 0,
+  "prHourlyLimit": 0,
+  "branchConcurrentLimit": 0,
   "lockFileMaintenance": {
     "enabled": true,
     "schedule": [
@@ -20,5 +21,9 @@
   },
   "schedule": [
     "every 2nd week starting on the 2 week of the year before 4am on Monday"
-  ]
+  ],
+  "vulnerabilityAlerts": {
+    "labels": ["security"],
+    "additionalReviewers": ["team:team-appsec"]
+  }
 }
