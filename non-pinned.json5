@@ -1,11 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    ":combinePatchMinorReleases",
-    ":dependencyDashboard",
-    ":separateMajorReleases",
+    ":combinePatchMinorReleases", // Do not separate patch and minor upgrades into separate PRs for the same dependency
+    ":dependencyDashboard", // Enable the dependency dashboard
+    ":separateMajorReleases", // Major releases will never be combined with minor/patch, so we can hold off on major and get incremental minors
     "config:base",
-    "group:monorepos",
+    "group:monorepos", // Use all pre-configured groupings of dependencies
     "github>bitwarden/renovate-config:pin-actions"
   ],
   "commitMessagePrefix": "[deps]:",
@@ -19,6 +19,7 @@
       "every 2nd week starting on the 2 week of the year before 4am on Monday"
     ]
   },
+  // All of our dependencies use 2-week schedule for generating update PRs
   "schedule": [
     "every 2nd week starting on the 2 week of the year before 4am on Monday"
   ],

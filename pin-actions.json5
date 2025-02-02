@@ -1,4 +1,5 @@
 {
+  // We have identified some Github Actions that we want to pin to specific versions
   "packageRules": [
     {
       "matchDatasources": ["github-tags"],
