@@ -3,5 +3,13 @@
   "extends": [
     ":pinAllExceptPeerDependencies",
     "github>bitwarden/renovate-config:non-pinned"
+  ],
+  "packageRules": [
+    {
+      "matchManagers": ["github-actions"],
+      "updateTypes": ["patch"],
+      "dependencyDashboardApproval": true,
+      "description": "Patch updates on approval dashboard"
+    }
   ]
 }
