@@ -55,7 +55,10 @@
   ],
   "packageRules": [
     {
-      "matchManagers": ["github-actions"],
+      "matchManagers": [
+        "github-actions",
+        "cargo"
+      ],
       "updateTypes": ["patch"],
       "dependencyDashboardApproval": true,
       "description": "View patch updates on approval dashboard for GitHub Actions"
