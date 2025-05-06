@@ -62,5 +62,9 @@
       "dependencyDashboardApproval": true,
       "description": "View patch updates on approval dashboard for GitHub Actions"
     }
+  ],
+  "ignoreDeps": [
+    "node",
+    "npm"
   ]
 }
