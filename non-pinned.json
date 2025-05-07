@@ -62,7 +62,7 @@
       ],
       "updateTypes": ["patch"],
       "dependencyDashboardApproval": true,
-      "description": "View patch updates on approval dashboard for cargo, github-actions, npm and nuget"
+      "description": "View patch updates on the dashboard for Cargo, GitHub Actions, NPM and NuGet"
     }
   ]
 }
