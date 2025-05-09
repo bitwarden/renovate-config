@@ -55,15 +55,18 @@
   ],
   "packageRules": [
     {
+      "matchManagers": ["github-actions"],
+      "enabled": false
+    },
+    {
       "matchManagers": [
         "cargo",
-        "github-actions",
         "npm",
         "nuget"
       ],
       "updateTypes": ["patch"],
       "dependencyDashboardApproval": true,
-      "description": "View patch updates on the dashboard for Cargo, GitHub Actions, NPM and NuGet"
+      "description": "View patch updates on the dashboard for Cargo, NPM and NuGet"
     }
   ],
   "ignoreDeps": [
