@@ -27,6 +27,7 @@
     "labels": ["security"],
     "additionalReviewers": ["team:team-appsec"]
   },
+  "osvVulnerabilityAlerts": true,
   "customDatasources": {
     "rust-nightly": {
       "defaultRegistryUrlTemplate": "https://renovate-rust-nightly.phi-ag.workers.dev/"
