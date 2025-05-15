@@ -27,7 +27,6 @@
     "labels": ["security"],
     "additionalReviewers": ["team:team-appsec"]
   },
-  "osvVulnerabilityAlerts": true,
   "customDatasources": {
     "rust-nightly": {
       "defaultRegistryUrlTemplate": "https://renovate-rust-nightly.phi-ag.workers.dev/"
@@ -55,34 +54,15 @@
   ],
   "packageRules": [
     {
-      "matchManagers": ["github-actions"],
-      "enabled": false
-    },
-    {
-      "matchSourceUrls": [
-        "https://github.com/**"
-      ],
-      "prBodyDefinitions": {
-        "OpenSSF": "[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/{{sourceRepo}}/badge)](https://securityscorecards.dev/viewer/?uri=github.com/{{sourceRepo}})"
-      },
-      "prBodyColumns": [
-        "Package",
-        "Type",
-        "Update",
-        "Change",
-        "Pending",
-        "OpenSSF"
-      ]
-    },
-    {
       "matchManagers": [
         "cargo",
+        "github-actions",
         "npm",
         "nuget"
       ],
       "updateTypes": ["patch"],
       "dependencyDashboardApproval": true,
-      "description": "View patch updates on the dashboard for Cargo, NPM and NuGet"
+      "description": "View patch updates on the dashboard for Cargo, GitHub Actions, NPM and NuGet"
     }
   ],
   "ignoreDeps": [
