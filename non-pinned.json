@@ -13,6 +13,7 @@
   "prConcurrentLimit": 0,
   "prHourlyLimit": 0,
   "branchConcurrentLimit": 0,
+  "rebaseWhen": "conflicted",
   "minimumReleaseAge": "7 days",
   "lockFileMaintenance": {
     "enabled": true,
@@ -56,13 +57,15 @@
     {
       "matchManagers": [
         "cargo",
+        "docker-compose",
+        "dockerfile",
         "github-actions",
         "npm",
         "nuget"
       ],
       "updateTypes": ["patch"],
       "dependencyDashboardApproval": true,
-      "description": "View patch updates on the dashboard for Cargo, GitHub Actions, NPM and NuGet"
+      "description": "View patch updates on the dashboard for Cargo, Docker Compose, Dockerfile, GitHub Actions, NPM and NuGet"
     }
   ],
   "ignoreDeps": [
