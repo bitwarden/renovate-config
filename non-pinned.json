@@ -25,7 +25,7 @@
     "every 2nd week starting on the 2 week of the year before 4am on Monday"
   ],
   "vulnerabilityAlerts": {
-    "labels": ["security"],
+    "addLabels": ["security"],
     "additionalReviewers": ["team:team-appsec"]
   },
   "customDatasources": {
@@ -66,6 +66,10 @@
       "updateTypes": ["patch"],
       "dependencyDashboardApproval": true,
       "description": "View patch updates on the dashboard for Cargo, Docker Compose, Dockerfile, GitHub Actions, NPM and NuGet"
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "addLabels": ["major-update"]
     }
   ],
   "ignoreDeps": [
