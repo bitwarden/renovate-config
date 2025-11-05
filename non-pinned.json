@@ -70,6 +70,12 @@
     {
       "matchUpdateTypes": ["major"],
       "addLabels": ["major-update"]
+    },
+    {
+      "description": "Don't pin msbuild-sdks in global.json - they don't support bracket syntax",
+      "matchFiles": ["global.json"],
+      "matchDepTypes": ["msbuild-sdk"],
+      "rangeStrategy": "replace"
     }
   ],
   "ignoreDeps": [
