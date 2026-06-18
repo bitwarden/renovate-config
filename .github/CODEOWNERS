@@ -9,6 +9,7 @@
 
 # BRE for pinned GitHub Actions
 pin-actions.json @bitwarden/dept-bre
+akuity-versions.json @bitwarden/dept-bre
 
 # Docker-related files
 **/Dockerfile @bitwarden/team-appsec @bitwarden/dept-bre
