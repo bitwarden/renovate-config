@@ -2,12 +2,6 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "packageRules": [
     {
-      "description": "Cap helm/chart-releaser-action.",
-      "matchDatasources": ["github-tags"],
-      "matchPackageNames": ["helm/chart-releaser-action"],
-      "allowedVersions": "<=1.5.0"
-    },
-    {
       "description": "Keep .nvmrc on a range rather than pinning it, so repos stay on the Node line they target",
       "matchManagers": ["nvm"],
       "rangeStrategy": "replace"
