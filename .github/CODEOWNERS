@@ -7,7 +7,7 @@
 # Default file owners
 * @bitwarden/dept-architecture
 
-# BRE for pinned GitHub Actions
+# BRE-owned files
 pin-actions.json @bitwarden/dept-bre
 external_dependencies/akuity-versions.json @bitwarden/dept-bre
 

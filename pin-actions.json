@@ -1,15 +1,19 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "packageRules": [
     {
+      "description": "Cap helm/chart-releaser-action. Original rationale was never recorded; v1.6.0 and v1.7.0 have shipped upstream. Lift once BRE confirms the cap is no longer needed.",
       "matchDatasources": ["github-tags"],
       "matchPackageNames": ["helm/chart-releaser-action"],
       "allowedVersions": "<=1.5.0"
     },
     {
+      "description": "Keep .nvmrc on a range rather than pinning it, so repos stay on the Node line they target",
       "matchManagers": ["nvm"],
       "rangeStrategy": "replace"
     },
     {
+      "description": "Runner version bumps break workflows and are easy to merge by mistake, so BRE updates them deliberately. Lift once runner bumps no longer require coordinated workflow changes.",
       "matchDatasources": ["github-runners"],
       "enabled": false
     }
