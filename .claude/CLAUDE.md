@@ -24,8 +24,6 @@ default.json          :pinAllExceptPeerDependencies  →  pinned consumers only
 
 Repos that must not pin extend `non-pinned` directly. Find consumers by searching the org for `bitwarden/renovate-config`.
 
-`pin-actions.json` does not pin actions. It holds three unrelated BRE-owned carve-outs: a `helm/chart-releaser-action` version cap, `rangeStrategy` for the `nvm` manager, and the `github-runners` datasource disabled. The name is historical, and renaming it would break every consumer at once, so read the file rather than inferring from its name.
-
 ## Which file to edit
 
 | The change should apply to…                   | Edit               |
