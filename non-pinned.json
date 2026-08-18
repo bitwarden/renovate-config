@@ -4,7 +4,7 @@
     ":combinePatchMinorReleases",
     ":dependencyDashboard",
     ":separateMajorReleases",
-    "config:base",
+    "config:recommended",
     "group:monorepos",
     "github>bitwarden/renovate-config:pin-actions"
   ],
@@ -37,18 +37,20 @@
     {
       "customType": "regex",
       "depNameTemplate": "rust",
-      "fileMatch": ["(^|/)rust-toolchain\\.toml?$"],
+      "managerFilePatterns": ["/(^|/)rust-toolchain\\.toml?$/"],
       "matchStrings": [
         "channel\\s*=\\s*\"(?<currentValue>\\d+\\.\\d+(?:\\.\\d+)?)\""
       ],
-      "lookupNameTemplate": "rust-lang/rust",
+      "packageNameTemplate": "rust-lang/rust",
       "datasourceTemplate": "github-tags"
     },
     {
       "customType": "regex",
       "depNameTemplate": "rust-nightly",
-      "fileMatch": ["(^|/)rust-toolchain\\.toml?$"],
-      "matchStrings": ["nightly-channel\\s*=\\s*\"nightly-(?<currentValue>.+?)\"\\n"],
+      "managerFilePatterns": ["/(^|/)rust-toolchain\\.toml?$/"],
+      "matchStrings": [
+        "nightly-channel\\s*=\\s*\"nightly-(?<currentValue>.+?)\"\\n"
+      ],
       "versioningTemplate": "regex:^(?<major>\\d{4})-(?<minor>\\d{2})-(?<patch>\\d{2})$",
       "datasourceTemplate": "custom.rust-nightly"
     }
@@ -63,7 +65,7 @@
         "npm",
         "nuget"
       ],
-      "updateTypes": ["patch"],
+      "matchUpdateTypes": ["patch"],
       "dependencyDashboardApproval": true,
       "description": "View patch updates on the dashboard for Cargo, Docker Compose, Dockerfile, GitHub Actions, NPM and NuGet"
     },
@@ -73,13 +75,10 @@
     },
     {
       "description": "Don't pin msbuild-sdks in global.json - they don't support bracket syntax",
-      "matchFiles": ["global.json"],
+      "matchFileNames": ["**/global.json"],
       "matchDepTypes": ["msbuild-sdk"],
       "rangeStrategy": "replace"
     }
   ],
-  "ignoreDeps": [
-    "node",
-    "npm"
-  ]
+  "ignoreDeps": ["node", "npm"]
 }
