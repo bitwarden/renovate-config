@@ -107,5 +107,4 @@ Do not hand-edit it and do not reformat it. It is a single 200KB line, so any fo
 - [Config validation](https://docs.renovatebot.com/config-validation/), the `renovate-config-validator` used above
 - [Renovate config presets](https://docs.renovatebot.com/config-presets/), how `extends` resolution works
 - [String pattern matching](https://docs.renovatebot.com/string-pattern-matching/), regex vs. glob rules for `managerFilePatterns` and `matchFileNames`
-- `.claude/CONTRIBUTING.md`, what belongs in `.claude/` and how to shape it
 - [`bitwarden/ai-plugins`](https://github.com/bitwarden/ai-plugins), where generic cross-repo Claude tooling belongs instead of here
