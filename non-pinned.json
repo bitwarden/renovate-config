@@ -53,6 +53,23 @@
       ],
       "versioningTemplate": "regex:^(?<major>\\d{4})-(?<minor>\\d{2})-(?<patch>\\d{2})$",
       "datasourceTemplate": "custom.rust-nightly"
+    },
+    {
+      "customType": "regex",
+      "description": "Bump the OS version embedded in Docker image tags (e.g. nginx:1.31-alpine3.23 -> 1.31-alpine3.24). Renovate's built-in Docker versioning treats everything after the first '-' as an opaque compatibility suffix and never bumps it, so it handles the app-version part while this manager handles the OS-version part: it pins the app version + OS name as the compatibility and bumps only the trailing OS major.minor. The matchStrings capture the whole tag and the versioningTemplate's trailing '$' anchor only parses tags whose OS version is the last component, so variants with a trailing modifier (e.g. -azurelinux3.0-distroless) fail to parse and are safely left untouched. Regexes are RE2-safe (no lookahead/lookbehind/backreferences). Add new OS names to the whitelist in both matchStrings and versioningTemplate as needed.",
+      "fileMatch": [
+        "(^|/)Dockerfile$",
+        "(^|/)Dockerfile\\.[^/]+$",
+        "(^|/)[^/]*\\.[Dd]ockerfile$",
+        "(^|/)docker-compose[^/]*\\.ya?ml$",
+        "(^|/)compose[^/]*\\.ya?ml$"
+      ],
+      "matchStrings": [
+        "FROM\\s+(?:--platform=\\S+\\s+)?(?<depName>[^\\s:@\"']+):(?<currentValue>[^\\s@\"']*[-_](?:alpine|azurelinux|ubuntu|debian)-?\\d[^\\s@\"']*)(?:@(?<currentDigest>sha256:[a-f0-9]+))?",
+        "image:\\s*[\"']?(?<depName>[^\\s:@\"']+):(?<currentValue>[^\\s@\"']*[-_](?:alpine|azurelinux|ubuntu|debian)-?\\d[^\\s@\"']*)(?:@(?<currentDigest>sha256:[a-f0-9]+))?"
+      ],
+      "versioningTemplate": "regex:^(?<compatibility>.+[-_](?:alpine|azurelinux|ubuntu|debian)-?)(?<major>\\d+)\\.(?<minor>\\d+)(?:\\.(?<patch>\\d+))?$",
+      "datasourceTemplate": "docker"
     }
   ],
   "packageRules": [
