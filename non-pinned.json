@@ -58,11 +58,9 @@
       "customType": "regex",
       "description": "Bump the OS version embedded in a Docker tag (nginx:1.31-alpine3.23 -> 1.31-alpine3.24) - the built-in Docker manager treats everything after the first '-' as an opaque suffix and never moves it",
       "managerFilePatterns": [
-        "/(^|/)Dockerfile$/",
-        "/(^|/)Dockerfile\\.[^/]+$/",
-        "/(^|/)[^/]*\\.[Dd]ockerfile$/",
-        "/(^|/)docker-compose[^/]*\\.ya?ml$/",
-        "/(^|/)compose[^/]*\\.ya?ml$/"
+        "/(^|/|\\.)([Dd]ocker|[Cc]ontainer)file$/",
+        "/(^|/)([Dd]ocker|[Cc]ontainer)file[^/]*$/",
+        "/(^|/)(?:docker-)?compose[^/]*\\.ya?ml$/"
       ],
       "matchStrings": [
         "FROM\\s+(?:--platform=\\S+\\s+)?(?<depName>[^\\s:@\"']+):(?<currentValue>[^\\s@\"']*[-_](?:alpine|azurelinux|ubuntu|debian)-?\\d[^\\s@\"']*)(?:@(?<currentDigest>sha256:[a-f0-9]+))?",
