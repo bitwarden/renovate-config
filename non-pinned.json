@@ -63,11 +63,12 @@
         "/(^|/)(?:docker-)?compose[^/]*\\.ya?ml$/"
       ],
       "matchStrings": [
-        "FROM\\s+(?:--platform=\\S+\\s+)?(?<depName>[^\\s:@\"']+):(?<currentValue>[^\\s@\"']*[-_](?:alpine|azurelinux|ubuntu|debian)-?\\d[^\\s@\"']*)(?:@(?<currentDigest>sha256:[a-f0-9]+))?",
-        "image:\\s*[\"']?(?<depName>[^\\s:@\"']+):(?<currentValue>[^\\s@\"']*[-_](?:alpine|azurelinux|ubuntu|debian)-?\\d[^\\s@\"']*)(?:@(?<currentDigest>sha256:[a-f0-9]+))?"
+        "(?:^|\\n)[ \\t\uFEFF]*FROM\\s+(?:--platform=\\S+\\s+)?(?<depName>[^\\s:@\"']+):(?<currentValue>[^\\s@\"']*[-_](?:alpine|azurelinux|ubuntu|debian)-?\\d[^\\s@\"']*)(?:@(?<currentDigest>sha256:[a-f0-9]+))?",
+        "(?:^|\\n)[ \\t\uFEFF]*image:\\s*[\"']?(?<depName>[^\\s:@\"']+):(?<currentValue>[^\\s@\"']*[-_](?:alpine|azurelinux|ubuntu|debian)-?\\d[^\\s@\"']*)(?:@(?<currentDigest>sha256:[a-f0-9]+))?"
       ],
       "versioningTemplate": "regex:^(?<compatibility>.+[-_](?:alpine|azurelinux|ubuntu|debian)-?)(?<major>\\d+)\\.(?<minor>\\d+)(?:\\.(?<patch>\\d+))?$",
-      "datasourceTemplate": "docker"
+      "datasourceTemplate": "docker",
+      "depTypeTemplate": "docker-os"
     }
   ],
   "packageRules": [
@@ -87,6 +88,12 @@
     {
       "matchUpdateTypes": ["major"],
       "addLabels": ["major-update"]
+    },
+    {
+      "description": "Keep Docker OS-version bumps on their own branch - they share a depName and an OS major with the built-in Docker manager's app-version bump (python:3.13-alpine3.21), and Renovate drops one of two upgrades that resolve to the same branch",
+      "matchDepTypes": ["docker-os"],
+      "additionalBranchPrefix": "docker-os-",
+      "commitMessageTopic": "{{depName}} OS version"
     },
     {
       "description": "Don't pin msbuild-sdks in global.json - they don't support bracket syntax",
