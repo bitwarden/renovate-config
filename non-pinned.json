@@ -53,6 +53,22 @@
       ],
       "versioningTemplate": "regex:^(?<major>\\d{4})-(?<minor>\\d{2})-(?<patch>\\d{2})$",
       "datasourceTemplate": "custom.rust-nightly"
+    },
+    {
+      "customType": "regex",
+      "description": "Bump the OS version embedded in a Docker tag (nginx:1.31-alpine3.23 -> 1.31-alpine3.24) - the built-in Docker manager treats everything after the first '-' as an opaque suffix and never moves it",
+      "managerFilePatterns": [
+        "/(^|/|\\.)([Dd]ocker|[Cc]ontainer)file$/",
+        "/(^|/)([Dd]ocker|[Cc]ontainer)file[^/]*$/",
+        "/(^|/)(?:docker-)?compose[^/]*\\.ya?ml$/"
+      ],
+      "matchStrings": [
+        "(?:^|\\n)[ \\t\uFEFF]*FROM\\s+(?:--platform=\\S+\\s+)?(?<depName>[^\\s:@\"'${}]+):(?<currentValue>[^\\s:@\"']*[-_](?:alpine|azurelinux|ubuntu|debian)-?\\d[^\\s:@\"']*)(?:@(?<currentDigest>sha256:[a-f0-9]+))?",
+        "(?:^|\\n)[ \\t\uFEFF]*image:\\s*[\"']?(?<depName>[^\\s:@\"'${}]+):(?<currentValue>[^\\s:@\"']*[-_](?:alpine|azurelinux|ubuntu|debian)-?\\d[^\\s:@\"']*)(?:@(?<currentDigest>sha256:[a-f0-9]+))?"
+      ],
+      "versioningTemplate": "regex:^(?<compatibility>.+[-_](?:alpine|azurelinux|ubuntu|debian)-?)(?<major>\\d+)\\.(?<minor>\\d+)(?:\\.(?<patch>\\d+))?$",
+      "datasourceTemplate": "docker",
+      "depTypeTemplate": "docker-os"
     }
   ],
   "packageRules": [
@@ -72,6 +88,12 @@
     {
       "matchUpdateTypes": ["major"],
       "addLabels": ["major-update"]
+    },
+    {
+      "description": "Keep Docker OS-version bumps on their own branch - they share a depName and an OS major with the built-in Docker manager's app-version bump (python:3.13-alpine3.21), and Renovate drops one of two upgrades that resolve to the same branch",
+      "matchDepTypes": ["docker-os"],
+      "additionalBranchPrefix": "docker-os-",
+      "commitMessageTopic": "{{depName}} OS version"
     },
     {
       "description": "Don't pin msbuild-sdks in global.json - they don't support bracket syntax",
