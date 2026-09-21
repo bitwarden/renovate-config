@@ -34,7 +34,7 @@ Repos that must not pin extend `non-pinned` directly. Find consumers by searchin
 
 Pick the narrowest layer that satisfies the request, but note that a narrow file is not the same as a narrow reach. `pin-actions.json` is the smallest file here and still reaches everyone through `non-pinned`.
 
-`pin-actions.json` and `external_dependencies/akuity-versions.json` are owned by `@bitwarden/dept-bre`; everything else defaults to `@bitwarden/dept-architecture`. Touching those two pulls in a different reviewer.
+`pin-actions.json` is owned by `@bitwarden/dept-bre`; everything else defaults to `@bitwarden/dept-architecture`. Touching it pulls in a different reviewer.
 
 ## Renovate version
 
@@ -87,12 +87,6 @@ Do not weaken `minimumReleaseAge` or `vulnerabilityAlerts` without AppSec sign-o
 Every cap and every `enabled: false` needs a `description` naming what has to be true before it can be lifted, because both block security updates silently and indefinitely. The `chart-releaser-action` cap sat for years with no recorded rationale, which is the outcome to avoid.
 
 Only add a `customDatasources` registry URL for a trusted, org-approved host. Renovate queries it on every run from every consuming repo, and the response drives what version gets proposed.
-
-## `external_dependencies/akuity-versions.json`
-
-Not a preset, and unrelated to everything above. It mirrors an upstream Akuity asset carrying CVE identifiers consumed by other tooling, is refreshed by an automated job, and is owned by `@bitwarden/dept-bre`.
-
-Do not hand-edit it and do not reformat it. It is a single 200KB line, so any formatter rewrites the whole file. Keep it out of preset PRs.
 
 ## Gotchas
 
