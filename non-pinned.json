@@ -83,9 +83,9 @@
         "npm",
         "nuget"
       ],
-      "matchUpdateTypes": ["patch"],
+      "matchUpdateTypes": ["minor", "patch"],
       "dependencyDashboardApproval": true,
-      "description": "View patch updates on the dashboard for Cargo, Docker Compose, Dockerfile, GitHub Actions, NPM and NuGet"
+      "description": "View minor and patch updates on the dashboard for Cargo, Docker Compose, Dockerfile, GitHub Actions, NPM and NuGet"
     },
     {
       "matchUpdateTypes": ["major"],
